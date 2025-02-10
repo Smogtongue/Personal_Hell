@@ -1,0 +1,308 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0 auto; /* Center the body */
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #4b2e2e; /* Chocolate */
+    color: #4b2e2e; /* Chocolate */
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem; /* Increase font size */
+}
+
+/* Header Styles */
+h1, h2, h3, h4 {
+    font-family: 'Delius Swash Caps', cursive; /* Replace with Delius Swash Caps */
+}
+
+h1 {
+    font-family: 'Autour One', cursive; /* Replace with Autour One */
+    position: relative;
+    color: #fff; /* Vanilla font */
+    font-size: 4rem; /* Larger font size */
+    text-shadow: 2px 2px 0 #4b2e2e, /* Chocolate shadow */
+                 4px 4px 0 #4b2e2e, /* Chocolate shadow */
+                 6px 6px 0 #4b2e2e; /* Chocolate shadow */
+    max-width: 800px; /* Same width as containers */
+    margin: 2rem auto; /* Center the header and add margin */
+    padding: 1.5rem; /* Same padding as #about-me */
+    background-color: #ff9999; /* Strawberry background */
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4b2e2e /* Chocolate */
+}
+
+h3 {
+    font-family: 'Delius Swash Caps', cursive; /* Ensure h3 uses Delius Swash Caps */
+    color: #4b2e2e; /* Chocolate */
+    font-size: 2rem; /* Adjust font size */
+}
+
+h4 {
+    font-family: 'Delius Swash Caps', cursive; /* Ensure h4 uses Delius Swash Caps */
+    color: #fff; /* Vanilla font */
+    font-size: 1.5rem; /* Adjust font size */
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%; /* Take full width of the page */
+    border-radius: 10px;
+    margin: 2rem 0; /* Add margin to space below the header */
+    display: flex;
+    justify-content: center; /* Center the nav bar */
+    flex-wrap: wrap; /* Allow nav bar to shrink or grow */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 3.5rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow nav items to wrap */
+    justify-content: center; /* Center nav items on mobile */
+}
+
+nav ul li {
+    background-color: #fff; /* Vanilla */
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a {
+    color: #4b2e2e; /* Chocolate */
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    font-weight: bolder;
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+}
+
+main, aside, footer {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: block;
+    background-color: #fff; /* Vanilla */
+    border-radius: 10px;
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+}
+
+/* Form Styles */
+form {
+    background-color: #4b2e2e; /* Chocolate background */
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Centered small box */
+    text-align: center; /* Center the form content */
+}
+
+form h2 {
+    margin-top: 0;
+    color: #ff9999; /* Strawberry */
+    font-size: 3rem; /* Larger font size */
+}
+
+form label {
+    color: #fff; /* Vanilla font color for labels */
+}
+
+form input, form textarea, form button {
+    display: block;
+    width: 80%; /* Adjust width for centering */
+    max-width: 100%; /* Prevent expanding outside container */
+    min-width: 80%; /* Prevent shrinking smaller than original size */
+    margin: 0.5rem auto; /* Center the input boxes */
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #4b2e2e; /* Chocolate */
+}
+
+form textarea {
+    padding-left: 0.5rem; /* Ensure equal padding */
+    padding-right: 0.5rem; /* Ensure equal padding */
+    margin-left: auto; /* Ensure equal margins */
+    margin-right: auto; /* Ensure equal margins */
+    resize: vertical; /* Allow only vertical resizing */
+}
+
+form button {
+    background-color: #ff9999; /* Strawberry */
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4b2e2e; /* Chocolate */
+}
+
+/* Sections Styles */
+.sections-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.sections-container .section-box {
+    background-color: #fff; /* Vanilla */
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border-radius: 15px;
+    padding: 1rem;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sections-container .section-box h3 {
+    color: #4b2e2e; /* Chocolate */
+    margin-top: 0;
+}
+
+/* Specific Section Styles */
+#open-projects {
+    background-color: #fff; /* Vanilla */
+    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Centered box */
+}
+
+#open-projects h2 {
+    color: #ff9999; /* Strawberry */
+    margin-top: 0;
+    font-size: 3rem; /* Larger font size */
+}
+
+#open-projects article p {
+    text-align: justify;
+    max-width: 800px; /* Same length as the header */
+    margin: 0 auto;
+}
+
+#about-me {
+    background-color: #ff9999; /* Strawberry background */
+    border: 4px solid #4b2e2e; /* Chocolate, doubled size */
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Centered box */
+    color: #4b2e2e; /* Chocolate */
+}
+
+#about-me h2 {
+    color: #fff; /* Vanilla */
+    margin-top: 0;
+    font-size: 3rem; /* Larger font size */
+}
+
+#about-me p {
+    text-align: center;
+}
+
+#about-me .lists-container {
+    display: flex;
+    justify-content: center; /* Center the container */
+    gap: 1rem; /* Create space between containers */
+    margin-top: 1rem;
+    max-width: 100%; /* Ensure it takes full width of the container */
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap; /* Allow lists to shrink with screen size */
+}
+
+#about-me .lists-container .list-box {
+    background-color: #4b2e2e; /* Chocolate */
+    border-radius: 15px;
+    width: 45%; /* Adjust width to fit side-by-side */
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Vanilla font */
+    margin: 0.5rem; /* Add margin for spacing */
+    display: inline-block; /* Display list containers in a horizontal row */
+    vertical-align: top; /* Align the top of the containers */
+}
+
+@media (max-width: 600px) {
+    #about-me .lists-container .list-box {
+        width: 100%; /* Shrink to full width on small screens */
+    }
+}
+
+@media (max-width: 300px) {
+    #about-me .lists-container .list-box {
+        width: 100%; /* Shrink to full width on small screens */
+    }
+}
+
+footer {
+    padding: 0.5rem; /* Make footer skinnier */
+    margin: 0.5rem 0;
+    background-color: #ff9999; /* Strawberry background */
+    color: #fff; /* Vanilla font */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensure it's not within a flex container */
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    header, main, aside, footer {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    header, footer {
+        width: 100%;
+    }
+
+    aside {
+        width: 25%;
+    }
+
+    main {
+        width: 50%;
+    }
+}
