@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const texts = ["Codes ", "Creates "];
-    const baseText = "Zee ";
+    const texts = ["odes", "reates"];
+    const baseText = "Zee C";
     let textIndex = 0;
     let charIndex = 0;
     const speed = 150; // typing speed in milliseconds
@@ -36,7 +36,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(blinkCursor, 500); // Blink cursor every 500ms
 
-    typeEffect();
+    function initialTypeEffect() {
+        if (charIndex < baseText.length) {
+            document.querySelector("header h1").innerHTML = baseText.substring(0, charIndex + 1) + '<span class="cursor">|</span>';
+            charIndex++;
+            setTimeout(initialTypeEffect, speed);
+        } else {
+            charIndex = 0; // Reset charIndex for the next text
+            setTimeout(typeEffect, speed); // Start the typing effect for "odes" immediately
+        }
+    }
+
+    // Start the initial typing effect for "Zee C"
+    initialTypeEffect();
 
     // Toggle navigation menu visibility
     const hamburger = document.querySelector(".hamburger");
