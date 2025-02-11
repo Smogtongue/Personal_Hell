@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
 
 /* Base Styles */
+html {
+    scroll-behavior: smooth; /* Add smooth scrolling */
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0 auto; /* Center the body */
@@ -32,7 +36,7 @@ h1 {
                  4px 4px 0 #4b2e2e, /* Chocolate shadow */
                  6px 6px 0 #4b2e2e; /* Chocolate shadow */
     max-width: 800px; /* Same width as containers */
-    margin: 2rem auto; /* Center the header and add margin */
+    margin: 1rem auto; /* Reduced margin to 1rem */
     padding: 1.5rem; /* Same padding as #about-me */
     background-color: #ff9999; /* Strawberry background */
     border: 4px solid #ff9999; /* Strawberry, doubled size */
@@ -60,27 +64,54 @@ h4 {
 nav {
     width: 100%; /* Take full width of the page */
     border-radius: 10px;
-    margin: 2rem 0; /* Add margin to space below the header */
+    margin: 0.5rem 0; /* Reduced margin to 0.5rem */
     display: flex;
-    justify-content: center; /* Center the nav bar */
-    flex-wrap: wrap; /* Allow nav bar to shrink or grow */
+    justify-content: center; /* Center nav bar */
+    align-items: center; /* Align items vertically */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    position: relative; /* For positioning the nav links */
+    gap: 0.5rem; /* Space between menu button and nav links */
+}
+
+nav .nav-container {
+    width: 90%;
+    max-width: 800px; /* Same width as the 'About Zee' section */
+    display: flex;
+    justify-content: center; /* Center nav bar */
+    align-items: center; /* Align items vertically */
+    gap: 0.5rem; /* Space between menu button and nav links */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 3.5rem; /* Space between buttons */
-    flex-wrap: wrap; /* Allow nav items to wrap */
-    justify-content: center; /* Center nav items on mobile */
+    gap: 0.5rem; /* Space between buttons */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align nav items to the right */
+    transition: visibility 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out; /* Added visibility and opacity transitions */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transform: translateX(0); /* Initially at the same position as the menu button */
 }
 
-nav ul li {
+nav ul.visible {
+    visibility: visible; /* Make visible */
+    opacity: 1; /* Fully visible */
+    transform: translateX(100%); /* Slide out to the right */
+}
+
+nav ul li, .hamburger {
     background-color: #fff; /* Vanilla */
-    border: 4px solid #ff9999; /* Strawberry, doubled size */
+    border: 2px solid #ff9999; /* Strawberry, reduced size */
     border-radius: 10px;
-    padding: 1rem 3rem;
+    padding: 0.5rem 1rem; /* Reduced padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #4b2e2e; /* Chocolate color */
+    font-size: 1rem; /* Reduced font size */
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-out; /* Added transform transition */
 }
 
 nav ul li a {
@@ -90,6 +121,16 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bolder;
+}
+
+.hamburger {
+    display: inline-block;
+    margin: 0.5rem auto; /* Center the menu button */
+    position: relative;
+}
+
+.hamburger.move-left {
+    transform: translateX(-50%); /* Move to the left */
 }
 
 /* Container Styles */
@@ -216,7 +257,7 @@ form button:hover {
     border: 4px solid #4b2e2e; /* Chocolate, doubled size */
     border-radius: 15px;
     padding: 1.5rem;
-    margin: 2rem auto;
+    margin: 1rem auto; /* Reduced margin to 1rem */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px; /* Centered box */
     color: #4b2e2e; /* Chocolate */
