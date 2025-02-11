@@ -44,6 +44,12 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem; /* Smaller font size for mobile */
+    }
+}
+
 h2 {
     color: #4b2e2e /* Chocolate */
 }
@@ -80,43 +86,48 @@ nav .nav-container {
     justify-content: center; /* Center nav bar */
     align-items: center; /* Align items vertically */
     gap: 0.5rem; /* Space between menu button and nav links */
+    position: relative; /* For centering the menu button */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 0.5rem; /* Space between buttons */
+    gap: 1rem; /* Space between buttons */
     flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: flex-start; /* Align nav items to the right */
+    justify-content: center; /* Center nav items */
     transition: visibility 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out; /* Added visibility and opacity transitions */
     visibility: hidden; /* Initially hidden */
     opacity: 0; /* Initially transparent */
-    transform: translateX(0); /* Initially at the same position as the menu button */
+    transform: translateX(-50%); /* Initially behind the menu button */
 }
 
 nav ul.visible {
     visibility: visible; /* Make visible */
     opacity: 1; /* Fully visible */
-    transform: translateX(100%); /* Slide out to the right */
+    transform: translateX(0); /* Slide out to the center */
 }
 
 nav ul li, .hamburger {
+    display: inline-block;
     background-color: #fff; /* Vanilla */
     border: 2px solid #ff9999; /* Strawberry, reduced size */
     border-radius: 10px;
-    padding: 0.5rem 1rem; /* Reduced padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #4b2e2e; /* Chocolate color */
     font-size: 1rem; /* Reduced font size */
+    font-weight: bold;
     cursor: pointer;
-    text-align: center;
     transition: transform 0.3s ease-out; /* Added transform transition */
 }
 
 nav ul li a {
     color: #4b2e2e; /* Chocolate */
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    text-align: center; /* Center text vertically */
+    height: 100%; /* Match height of li */
 }
 
 nav ul li a:hover {
@@ -126,11 +137,16 @@ nav ul li a:hover {
 .hamburger {
     display: inline-block;
     margin: 0.5rem auto; /* Center the menu button */
-    position: relative;
+    position: absolute; /* Position absolute to center within nav container */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff9999; /* Strawberry background */
+    color: #4b2e2e; /* Chocolate font color */
+    padding: 0.5rem; /* Adjust padding */
 }
 
 .hamburger.move-left {
-    transform: translateX(-50%); /* Move to the left */
+    transform: translateX(-150%) translateX(-150%) translateX(-150%); /* Move to the far left */
 }
 
 /* Container Styles */
@@ -185,7 +201,7 @@ form input, form textarea, form button {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: #4b2e2e; /* Chocolate */
+    color: #fff; /* Vanilla */
 }
 
 form textarea {
@@ -194,6 +210,15 @@ form textarea {
     margin-left: auto; /* Ensure equal margins */
     margin-right: auto; /* Ensure equal margins */
     resize: vertical; /* Allow only vertical resizing */
+    position: relative; /* For positioning the character count display */
+}
+
+form textarea + div {
+    text-align: right;
+    padding: 0.5rem;
+    color: #4b2e2e; /* Chocolate color */
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem; /* Add margin to separate from the submit button */
 }
 
 form button {
@@ -205,7 +230,8 @@ form button {
 }
 
 form button:hover {
-    background-color: #4b2e2e; /* Chocolate */
+    background-color: #fff; /* Vanilla background */
+    color: #4b2e2e; /* Chocolate font */
 }
 
 /* Sections Styles */
@@ -252,6 +278,35 @@ form button:hover {
     margin: 0 auto;
 }
 
+#open-projects figure img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the bobble effect */
+}
+
+#open-projects figure img:hover {
+    animation: bobble 0.6s ease-in-out; /* Apply bobble animation */
+}
+
+@keyframes bobble {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
 #about-me {
     background-color: #ff9999; /* Strawberry background */
     border: 4px solid #4b2e2e; /* Chocolate, doubled size */
@@ -270,33 +325,36 @@ form button:hover {
 }
 
 #about-me p {
-    text-align: center;
+    text-align: justify;
+    margin: 1rem 3.5rem;
 }
 
 #about-me .lists-container {
     display: flex;
-    justify-content: center; /* Center the container */
+    justify-content: space-around; /* Center the container */
     gap: 1rem; /* Create space between containers */
-    margin-top: 1rem;
-    max-width: 100%; /* Ensure it takes full width of the container */
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap; /* Allow lists to shrink with screen size */
+    margin-top: 0.5rem;
+    max-width: 75%; /* Ensure it takes full width of the container */
+    margin: auto; /* Center the container */
+    flex-wrap: nowrap; /* Display list-box side by side */
 }
 
 #about-me .lists-container .list-box {
     background-color: #4b2e2e; /* Chocolate */
     border-radius: 15px;
     width: 45%; /* Adjust width to fit side-by-side */
-    padding: 1rem;
+    padding: 0.25rem; /* Adjust padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #fff; /* Vanilla font */
-    margin: 0.5rem; /* Add margin for spacing */
+    margin: 1rem; /* Add margin for spacing */
     display: inline-block; /* Display list containers in a horizontal row */
     vertical-align: top; /* Align the top of the containers */
 }
 
 @media (max-width: 600px) {
+    #about-me .lists-container {
+        flex-wrap: wrap; /* Allow lists to shrink with screen size */
+    }
     #about-me .lists-container .list-box {
         width: 100%; /* Shrink to full width on small screens */
     }
