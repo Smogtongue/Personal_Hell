@@ -202,6 +202,7 @@ form input, form textarea, form button {
     border: 1px solid #ccc;
     border-radius: 5px;
     color: #fff; /* Vanilla */
+    background-color: #2B2A33; /* Dark background color */
 }
 
 form textarea {
